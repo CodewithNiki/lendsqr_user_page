@@ -1,0 +1,39 @@
+@use "variable" as variable;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: variable.$color-secondary;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+}
+
+main {
+  height: 100vh;
+}
+
+input {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  outline: none;
+  font-size: calc(0.5rem + 0.5vw);
+  cursor: pointer;
+}
+
+input:focus {
+  border-color: variable.$color-tertiary;
+}
