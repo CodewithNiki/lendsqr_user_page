@@ -2,8 +2,6 @@ import { Users } from "../../../data/user";
 import { NextApiRequest, NextApiResponse } from 'next'
 
 interface User {
-  id: string;
-  name: string;
   email: string;
   password: number;
 }

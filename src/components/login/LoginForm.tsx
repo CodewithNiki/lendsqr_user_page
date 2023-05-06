@@ -37,7 +37,6 @@ const LoginForm: NextPage = (props): JSX.Element => {
             <input type="text" placeholder="Password" value={userInfo.password} onChange={(e) => setUserInfo({...userInfo, password: e.target.value})}/><br/>
             <Link href={"/"} className={styles.login_form_container_text}>FORGOT PASSWORD?</Link><br/>
             <button className={styles.login_form_container_btn} value="Login">LOG IN</button>
-            <div></div>
           </div>
         </form>
       </div>
