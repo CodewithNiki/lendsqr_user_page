@@ -5,6 +5,7 @@ import styles from "../../../styles/UserDetail.module.scss";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import axios from 'axios';
 
 interface User {
   email: string;
@@ -246,10 +247,10 @@ const UserDetails = ({ user }: UserDetailsProps) => {
 
 export async function getStaticProps(context: { params: { id: string } }) {
   const { id } = context.params;
-  const res = await fetch(
+  const res = await axios.get(
     `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`
   );
-  const user = await res.json();
+  const user = await res.data;
   return {
     props: {
       user,
