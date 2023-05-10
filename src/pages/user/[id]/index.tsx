@@ -5,11 +5,54 @@ import styles from "../../../styles/UserDetail.module.scss";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import {User, details } from "./utilities"
+
+interface User {
+  email: string;
+  profile: {
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    avatar: string;
+    gender: string;
+    bvn: string;
+    address: string;
+    currency: string;
+  };
+
+  guarantor: {
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    gender: string;
+    address: string;
+  };
+  socials: {
+    facebook: string;
+    instagram: string;
+    twitter: string;
+  };
+  education: {
+    level: string;
+    employmentStatus: string;
+    sector: string;
+    duration: string;
+    officeEmail: string;
+    loanRepayment: string;
+    monthlyIncome: {
+      0: string;
+      1: string;
+    };
+  };
+  accountBalance: string;
+  accountNumber: string;
+}
+
 
 interface UserDetailsProps {
   user: User;
 }
+
+const details: String[] = ['General Details', 'Documents', 'Bank Details', 'Loans', 'Savings', 'App and System'];
 
 const UserDetails = ({ user }: UserDetailsProps) => {
   const router = useRouter();
