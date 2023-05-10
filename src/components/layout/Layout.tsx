@@ -2,8 +2,7 @@ import { useSession } from "next-auth/react";
 import WelcomePage from "../welcome/WelcomePage";
 import NavBar from "../nav/NavBar";
 import SideNav from "../nav/SideNav";
-import styles from "../../styles/Layout.module.scss";
-import UserDashboard from "../../pages/dashboard/UserDashboard";
+import IconBar from "../nav/IconBar";
 
 interface IChildren {
   children: React.ReactNode;
@@ -19,15 +18,20 @@ const Layout = ({ children }: IChildren) => {
       <section>
           <NavBar />
           <SideNav />
-          <UserDashboard users={[]} />
-          <div className={styles.container}>{children}</div>
+          <div className="height">{children}</div>
       </section>
     );
   }
   return (
-    <main>
-      <WelcomePage />
-    </main>
+    // <main className="">
+    //   <WelcomePage />
+    // </main>
+    <section>
+          <NavBar />
+          <SideNav />
+          <IconBar/>
+          <div className="height">{children}</div>
+      </section>
   );
 };
 export default Layout;

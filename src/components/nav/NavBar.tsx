@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../logo/Logo";
 import { FaSistrix, FaAngleDown } from "react-icons/fa";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
@@ -13,7 +12,6 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.nav_first}>
-        <Logo />
         <div className={styles.nav_first_input}>
           <input
             type="text"
@@ -28,13 +26,13 @@ const NavBar = () => {
           Docs
         </Link>
         <Image src={Notification} alt="" width={22} height={24} />
-        <Image
-          src={session?.user?.image}
+        {/* <Image
+          src={session.user?.image}
           width={48}
           height={48}
           alt="img"
           className={styles.nav_second_img}
-        />
+        /> */}
         <div className={styles.nav_second_para}>
         <p>{session?.user?.name}</p>
         <FaAngleDown className={styles.nav_second_para_icon}/>

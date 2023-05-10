@@ -1,0 +1,114 @@
+@import './variable';
+
+.UserContainer {
+  @include breakpointTablet{
+    margin-top: 4vh;
+  }
+  padding: 0 2vh;
+  background-color: #ffffff;
+  border: 0.1rem solid rgba(33, 63, 125, 0.06);
+  box-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.04);
+  border-radius: 0.4rem;
+  overflow-x: auto;
+  &_table {
+    border-collapse: collapse;
+    overflow-x: auto;
+    &_head {
+      tr {
+        th {
+          font-size: calc(0.7rem + 0.2vw);
+          font-weight: 600;
+          word-wrap: break-word;
+          text-transform: capitalize;
+          padding: 1vh 0.5vw 0 0;
+          text-align: left;
+          max-width: 20rem;
+          div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+          &:nth-child(7) {
+            min-width: 2rem;
+          }
+        }
+      }
+      &_click {
+        cursor: pointer;
+      }
+    }
+    tbody {
+      td {
+        font-size: calc(0.8rem + 0.2vw);
+        font-weight: 400;
+        max-width: 20rem;
+        padding: 1vh 2vw 1vw 0;
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        word-wrap: break-word;
+        @include breakpointMobile {
+          max-width: 15rem;
+        }
+      }
+    }
+  }
+  &_click {
+    cursor: pointer;
+  }
+
+  &_controls {
+    width: 85%;
+    position: absolute;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    &_first{
+      display: flex;
+      gap: 0.5rem;
+      font-size: calc(0.8rem + 0.2vw);
+      align-items: center;
+      button{
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.2rem 0.5rem;
+      }
+    }
+
+    &_second{
+      &_left,
+      &_right{
+        font-size: calc(0.8rem + 0.2vw);
+        cursor: pointer;
+      }
+
+    }
+  
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  width: 15rem;
+  padding: 1rem 0;
+  border: 1px solid rgba(84, 95, 125, 0.08);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  right: 5%;
+  z-index: 99;
+
+  &_detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: calc(0.8rem + 0.2vw);
+    padding: 0.5rem 0;
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #545f7d;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

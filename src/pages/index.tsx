@@ -1,8 +1,24 @@
-import React from "react";
 import Head from "next/head";
 import Layout from "@/components/layout/Layout";
+import Users from "@/components/dashboard/UserProfile";
+import React from "react";
+import { Data } from "@/components/dashboard/UserDashboard";
+import UserDashboard from "@/components/dashboard/UserDashboard";
+import { getUsers } from "../../lib/User";
+import styles from "../styles/Main.module.scss"
 
-const index = () => {
+export async function getStaticProps() {
+  const users = await getUsers();
+  
+
+  return {
+    props: {
+      users,
+    },
+  };
+}
+
+const index:React.FC<Data> = ({users}) => {
   
   return (
     <>
@@ -13,7 +29,15 @@ const index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="" />
       </Head>
-      <Layout>{}</Layout>
+      <>
+     
+        <div className={styles.main}>
+        <UserDashboard/>  
+        <Users users={users}/>
+        </div>
+        {}
+    
+      </>
     </>
   );
 };

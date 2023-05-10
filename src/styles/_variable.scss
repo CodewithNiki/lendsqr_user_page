@@ -1,4 +1,37 @@
+// @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;1,500&display=swap');
+
+// @font-face {
+// 	font-family: 'Avenir next';
+// 	src: local('AvenirNext'), url("../fonts/AvenirNextLTPro-Regular.otf") format('truetype');
+// }
+
 $color-primary: #FFFFFF;
 $color-secondary: #213F7D;
 $color-tertiary: #39CDCC;
 $color-neutral: #E5E5E5;
+
+@mixin breakpointDesktop {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin breakpointLgDesktop {
+    @media (min-width: 800px) {
+        @content;
+    }
+}
+
+@mixin breakpointMobile {
+	@media (max-width: 500px) {
+		@content;
+	}
+}
+
+@mixin breakpointTablet {
+	@media (max-width: 750px) {
+		@content;
+	}
+}
+
+

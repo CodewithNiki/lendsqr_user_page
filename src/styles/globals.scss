@@ -1,4 +1,4 @@
-@use "variable" as variable;
+@import "./variable";
 
 *,
 *::before,
@@ -9,29 +9,32 @@
 }
 
 body {
-  color: #213F7D;
-  width: 100vw;
-  height: 100vh;
+  color: #213f7d;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 62.5%;
-  overflow-x: hidden;
 }
 
-main {
+section {
   height: 100vh;
   width: 100%;
+  display: grid;
+  grid-template-columns: 16% 1fr;
+  grid-template-rows: 7rem 1fr;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main";
+
+  @include breakpointDesktop {
+    display: flex;
+    flex-direction: column;
+
+  }
 }
 
-section{
-  display: flex;
-  color: black;
-  margin-top: 5rem;
-  
-
-}
-input {
+input,
+select {
   width: 100%;
   height: 3rem;
   margin-bottom: 1rem;
@@ -43,6 +46,22 @@ input {
   background-color: transparent;
 }
 
-input:focus {
-  border-color: #39CDCC;
+select {
+  font-size: calc(0.6rem + 0.2vw);
+  opacity: 0.6;
+  @include breakpointLgDesktop{
+    height: 2rem;
+  }
+}
+
+input:focus,
+select:focus {
+  border-color: #39cdcc;
+}
+
+label {
+  text-transform: capitalize;
+  width: 100%;
+  text-align: left;
+  font-size: calc(0.7rem + 0.2vw);
 }

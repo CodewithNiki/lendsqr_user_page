@@ -1,44 +1,58 @@
-@use "variable" as variable;
+@import "./variable";
 
 .sideNav{
-    min-height: 100vh;
-    padding-top: 2rem;
-    width: 15% !important;
+    grid-area: sidenav;
+    padding: 1rem;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     gap: 2vh;
     color: #213F7D;
     background-color: #FFFFFF;
+    z-index: 300;
 
-    &_link{
+    @include breakpointDesktop{
+        display: none;
+    }
+
+    &_aside{
         display: flex;
         flex-direction: column;
-        font-size: calc(0.4rem + 0.5vw);
-        gap: 1vh;
-        padding-left: 1.5vw;
+        font-size: calc(0.8rem + 0.2vw);
+        flex-grow: 2;
 
+
+        &_nav{
+            flex-grow: 2;
+        }
+
+       &_link{
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        justify-content: space-between;
         &_links{
             text-decoration: none;
             color: #213F7D;
-            padding: 0.5vh 0;
+            font-size: calc(0.8rem + 0.2vw);
             display: flex;
-            align-items: center;
             gap: 1rem;
+
+            @include breakpointTablet{
+                padding: 0.2rem 0;
+            }
         }
-    }
+       } 
 
-    &_heading,
-    &_text{
-        font-size: calc(0.6rem + 0.5vw);
-        padding-left: 1.5vw;
+       &_heading,
+       &_text{
+        margin: 1vh 0;        
+       }
 
-    }
-
-    &_title{
-        font-size: calc(0.4rem + 0.3vw);
-        font-weight: 700;
-        margin-bottom: 0.3rem;
-        padding-left: 1.5vw;
+       &_title{
+        font-size: calc(0.6rem + 0.2vw);
+        margin: 1vh 0;
+       }
     }
 
 }

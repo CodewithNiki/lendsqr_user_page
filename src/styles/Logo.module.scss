@@ -3,10 +3,11 @@
 .logo{
   display: flex;
   align-items: center;
+  height: 5rem;
 
   &_para{
     margin-left: 0.5rem;
-    font-size: calc(1.2rem + 0.5vw);
+    font-size: calc(1.4rem + 0.5vw);
     font-weight: 900;
   }
 }
