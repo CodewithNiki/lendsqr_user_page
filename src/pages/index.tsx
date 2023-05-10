@@ -5,7 +5,8 @@ import React from "react";
 import { Data } from "@/components/dashboard/UserDashboard";
 import UserDashboard from "@/components/dashboard/UserDashboard";
 import { getUsers } from "../../lib/User";
-import styles from "../styles/Main.module.scss"
+import styles from "../styles/Main.module.scss";
+import UserPageCount from '../components/dashboard/UserPageCount';
 
 export async function getStaticProps() {
   const users = await getUsers();
@@ -34,6 +35,7 @@ const index:React.FC<Data> = ({users}) => {
         <div className={styles.main}>
         <UserDashboard/>  
         <Users users={users}/>
+        {/* <UserPageCount users ={users}/> */}
         </div>
         {}
     

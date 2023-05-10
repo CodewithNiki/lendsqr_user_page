@@ -16,16 +16,18 @@ body {
   font-size: 62.5%;
 }
 
+main {
+  height: 100vh;
+}
+
 section {
   height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-columns: 16% 1fr;
-  grid-template-rows: 7rem 1fr;
+  grid-template-columns: 18% 1fr;
+  grid-template-rows: 100vh;
   grid-template-areas:
-    "sidenav header"
     "sidenav main";
-
   @include breakpointDesktop {
     display: flex;
     flex-direction: column;
@@ -44,6 +46,9 @@ select {
   outline: none;
   font-size: calc(0.5rem + 0.5vw);
   background-color: transparent;
+  @include breakpointTablet{
+    font-size: 0.8rem;
+}
 }
 
 select {

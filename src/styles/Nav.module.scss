@@ -1,23 +1,23 @@
 @import './variable';
 
 .nav {
-  grid-area: header;
   position: fixed;
+  height: 5rem;
   right: 0;
-  left: 0;
-  z-index: 200;
+  width: 100%;
+  z-index: 205;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #213F7D;
   background-color: #FFFFFF;
   box-shadow: 0 4px 0 0 rgba(208, 204, 204, 0.2), 0 6px 10px 0 rgba(171, 167, 167, 0.19);
-  padding: 0 5vw;
+  padding: 0 2vw;
 
   &_first {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 70%;
     height: 100%;
     align-items: center;
 
@@ -31,18 +31,19 @@
       @include breakpointDesktop{
         margin-top: 0.5rem;
       }
-      @include breakpointTablet{
+      @include breakpointLgTablet{
         visibility: hidden;
       }
 
       &_input{
         height: 2.5rem;
+        margin: auto 0;
       }
 
       &_icon {
         position: absolute;
         right: 0;
-        top: 55%;
+        top: 50%;
         width: 5rem;
         height: 2.5rem;
         padding: 0.5rem;
@@ -54,15 +55,15 @@
         border-bottom-right-radius: 20%;
         cursor: pointer;
 
-        @include breakpointDesktop{
-          top: 43%;
-        }
+        // @include breakpointDesktop{
+        //   // top: 48%;
+        // }
 
-        @include breakpointTablet{
+        @include breakpointLgTablet{
           visibility: visible;
           background: none;
           color: #39CDCC;
-          left: -1.2rem;
+          left: 0rem;
         }
   
       }

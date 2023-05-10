@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Notification from "../../../public/Notification.svg";
 import styles from "../../styles/Nav.module.scss";
+import Logo from "../logo/Logo";
 
 const NavBar = () => {
   const { data: session } = useSession();
@@ -12,6 +13,7 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.nav_first}>
+        <Logo />
         <div className={styles.nav_first_input}>
           <input
             type="text"
@@ -34,8 +36,8 @@ const NavBar = () => {
           className={styles.nav_second_img}
         /> */}
         <div className={styles.nav_second_para}>
-        <p>{session?.user?.name}</p>
-        <FaAngleDown className={styles.nav_second_para_icon}/>
+          <p>{session?.user?.name}</p>
+          <FaAngleDown className={styles.nav_second_para_icon} />
         </div>
       </div>
     </nav>

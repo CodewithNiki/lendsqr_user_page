@@ -17,7 +17,7 @@ export interface Data {
   users: IData[];
 }
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 10;
 
 const Users = ({ users }: Data) => {
   const router = useRouter();
@@ -133,7 +133,7 @@ const Users = ({ users }: Data) => {
           })}
         </tbody>
       </table>
-      {/* <div className={styles.UserContainer_controls}>
+      <div className={styles.UserContainer_controls}>
         <div className={styles.UserContainer_controls_first}> 
           <p>Showing</p> <button>{endIndex}<FaAngleDown/></button> <p>out of {users.length}</p>
         </div>
@@ -145,7 +145,7 @@ const Users = ({ users }: Data) => {
           <FaAngleRight />
           </button>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

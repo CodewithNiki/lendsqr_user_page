@@ -1,7 +1,7 @@
 @import './variable';
 
 .userDetail_container {
-    margin-top: 5rem;
+    padding-top: 2rem;
     @include breakpointDesktop{
         padding: 2rem;
 
@@ -36,6 +36,9 @@
             border: 0.15rem solid #E4033B;
             border-radius: 0.4rem;
             color: #E4033B;
+            @include breakpointMobile {
+                font-size: 0.6rem;
+            }
             cursor: pointer;
             &:nth-child(2){
                 color: #39CDCC;
@@ -61,6 +64,7 @@
         padding: 3.5rem 0;
         @include breakpointTablet{
             gap: 0.5rem;
+            padding: 1rem 0;
           }
         &_img{
             border-radius: 50%;
@@ -72,9 +76,15 @@
             @include breakpointTablet{
                 padding-right: 0.8rem;
               }
+            @include breakpointMobile{
+                padding-right: 0.5rem;
+            }    
             & div{
                 font-size: calc(0.6rem + 0.3rem);
                 margin: 0.5rem;
+                @include breakpointMobile{
+                    margin-left: 0rem;
+                }  
             }
         }
         &_star{
@@ -89,7 +99,12 @@
             border-left: 2px solid #545f7d1d;
             @include breakpointTablet{
                 padding: 0.5rem 0.8rem;
+                font-size: 1rem;
               }
+
+            @include breakpointMobile{
+                padding: 0.5rem;
+            }  
             &_star{
                 color: #E9B200;
                 display: flex;
@@ -99,13 +114,20 @@
         &_account{
             margin: auto 0;
             padding: 1rem 2rem;
-            font-size: calc(0.5rem + 0.3rem);
+            font-size: calc(0.8rem + 0.3vw);
             @include breakpointTablet{
                 padding: 0.5rem 0.8rem;
               }
+              @include breakpointMobile{
+                padding: 0.5rem;
+            }    
             &_currency{
                 font-size: calc(1rem + 0.3vw);
                 margin-bottom: 0.5rem;
+
+                @include breakpointMobile{
+                    font-size: 1rem;
+                }  
             }
         }
     }

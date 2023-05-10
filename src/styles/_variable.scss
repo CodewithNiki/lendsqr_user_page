@@ -34,4 +34,10 @@ $color-neutral: #E5E5E5;
 	}
 }
 
+@mixin breakpointLgTablet {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
 

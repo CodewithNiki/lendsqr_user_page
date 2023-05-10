@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logout from "../login/Logout";
 import styles from "../../styles/SideNav.module.scss";
 import Image from "next/image";
+import {FaAngleDown, FaToolbox, FaUniversity} from "react-icons/fa";
 import Logo from "../logo/Logo";
 
 export type Nav = {
@@ -28,7 +29,7 @@ export const CusList = ({ customerList }: ICustomer) => {
   const renderedLists = customerList.map((list, index) => {
     return (
       <Link className={styles.sideNav_aside_link_links} href={list.url} key={index}>
-        <Image src={list.image} alt="" width={10} height={10} />
+        <Image src={list.image} alt="" width={15} height={15} />
         {list.navText}
       </Link>
     );
@@ -40,7 +41,7 @@ export const BusList = ({ businessList }: IBusiness) => {
   const renderedLists = businessList.map((list, index) => {
     return (
       <Link className={styles.sideNav_aside_link_links} href={list.url} key={index}>
-        <Image src={list.image} alt="" width={10} height={10} />
+        <Image src={list.image} alt="" width={15} height={15} />
         {list.navText}
       </Link>
     );
@@ -52,7 +53,7 @@ export const SetList = ({ settingsList }: ISettings) => {
   const renderedLists = settingsList.map((list, index) => {
     return (
       <Link className={styles.sideNav_aside_link_links} href={list.url} key={index}>
-        {/* <Image src={list.image} alt='' width={10} height={10}/> */}
+        <Image src={list.image} alt='' width={15} height={15}/>
         {list.navText}
       </Link>
     );
@@ -63,10 +64,10 @@ export const SetList = ({ settingsList }: ISettings) => {
 const SideNav = () => {
   return (
     <div className={styles.sideNav}>
-      <Logo />
+      {/* <Logo /> */}
       <aside className={styles.sideNav_aside}>
-        <p className={styles.sideNav_aside_heading}>Switch Organization</p>
-        <p className={styles.sideNav_aside_text}>Dashboard</p>
+        <p className={styles.sideNav_aside_heading}><FaToolbox/> Switch Organization <FaAngleDown/></p>
+        <p className={styles.sideNav_aside_text}><FaUniversity/> Dashboard</p>
 
         <nav className={styles.sideNav_aside_nav}>
           <p className={styles.sideNav_aside_title}>CUSTOMER</p>

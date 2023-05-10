@@ -20,9 +20,10 @@
           font-weight: 600;
           word-wrap: break-word;
           text-transform: capitalize;
-          padding: 1vh 0.5vw 0 0;
+          padding: 1rem 0.5vw 0 0;
           text-align: left;
           max-width: 20rem;
+          position: relative;
           div {
             display: flex;
             align-items: center;
@@ -30,6 +31,14 @@
           }
           &:nth-child(7) {
             min-width: 2rem;
+
+            @include breakpointTablet {
+              min-width: 1rem;
+            }
+          }
+
+          @include breakpointLgTablet{
+            font-size: 0.9rem;
           }
         }
       }
@@ -45,8 +54,11 @@
         padding: 1vh 2vw 1vw 0;
         border-bottom: 1px solid rgba(33, 63, 125, 0.1);
         word-wrap: break-word;
-        @include breakpointMobile {
-          max-width: 15rem;
+        @include breakpointDesktop {
+          min-width: 15rem;
+        }
+        @include breakpointTablet{
+          font-size: 1rem;
         }
       }
     }
@@ -56,9 +68,7 @@
   }
 
   &_controls {
-    width: 85%;
-    position: absolute;
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     &_first{

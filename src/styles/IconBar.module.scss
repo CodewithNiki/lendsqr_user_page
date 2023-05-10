@@ -11,7 +11,7 @@
     &_bar{
         position: fixed;
         font-size: calc(2rem + 0.2vw);
-        top: 5rem;
+        top: 7rem;
         right: 5vw;
         z-index: 99;
         cursor: pointer;
@@ -20,12 +20,15 @@
     &_aside{
         position: fixed;
         padding-left: 5vw;
-        width: 40%;
+        width: 60%;
         height: 100vh;
         top: 0;
         left: 0;
-        background-color: #fff;
+        background-color: #FFFFFF;
         z-index: 400;
+        overflow-y: scroll;
+        
+
 
         &_nav{
             height: fit-content;
@@ -34,7 +37,9 @@
        &_heading,
        &_text{
         margin: 1vh 0; 
-        font-size: 1rem;       
+        font-size: 1rem;  
+        display: flex;
+        gap: 1rem;     
        }
 
        &_title{

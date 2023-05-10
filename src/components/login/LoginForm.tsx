@@ -27,7 +27,7 @@ const LoginForm: NextPage = (props): JSX.Element => {
           <Logo />
         </div>
         <div className={styles.login_image}>
-          <Image src={loginImage} alt="image" width={600} height={338} />
+          <Image src={loginImage} alt="image" width={500} height={338} />
         </div>
         <form className={styles.login_form} onSubmit={handleSubmit}>
           <div className={styles.login_form_container}>

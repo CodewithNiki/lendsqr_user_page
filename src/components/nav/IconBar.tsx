@@ -5,6 +5,8 @@ import Logo from "../logo/Logo";
 import { customerList, businessList, settingsList } from "./utilities";
 import Logout from "../login/Logout";
 import styles from "../../styles/IconBar.module.scss";
+import {FaAngleDown, FaToolbox, FaUniversity} from "react-icons/fa";
+
 
 const IconBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +24,8 @@ const IconBar = () => {
         <div className={styles.container}>
           <aside className={styles.container_aside}>
           <Logo />
-            <p className={styles.container_aside_heading}>Switch Organization</p>
-            <p className={styles.container_aside_text}>Dashboard</p>
+            <p className={styles.container_aside_heading}><FaToolbox/> Switch Organization <FaAngleDown/></p>
+            <p className={styles.container_aside_text}><FaUniversity/> Dashboard</p>
 
             <nav className={styles.container_aside_nav}>
               <p className={styles.container_aside_title}>CUSTOMER</p>

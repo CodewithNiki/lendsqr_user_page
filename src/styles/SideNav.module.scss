@@ -2,14 +2,14 @@
 
 .sideNav{
     grid-area: sidenav;
-    padding: 1rem;
-    padding-top: 0;
+    padding-left: 2vw;
     display: flex;
     flex-direction: column;
     gap: 2vh;
+    margin-top: 5rem;
     color: #213F7D;
     background-color: #FFFFFF;
-    z-index: 300;
+    z-index: 200;
 
     @include breakpointDesktop{
         display: none;
@@ -28,25 +28,25 @@
 
        &_link{
         display: flex;
-        height: 80%;
         flex-direction: column;
-        justify-content: space-between;
+
         &_links{
             text-decoration: none;
             color: #213F7D;
-            font-size: calc(0.8rem + 0.2vw);
+            font-size: calc(0.9rem + 0.2vw);
             display: flex;
+            align-items: center;
             gap: 1rem;
-
-            @include breakpointTablet{
-                padding: 0.2rem 0;
-            }
+            padding: 0.2rem 0;
         }
        } 
 
        &_heading,
        &_text{
-        margin: 1vh 0;        
+        margin: 1vh 0; 
+        display: flex;
+        align-items: center;   
+        gap: 1rem;    
        }
 
        &_title{

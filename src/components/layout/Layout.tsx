@@ -23,15 +23,9 @@ const Layout = ({ children }: IChildren) => {
     );
   }
   return (
-    // <main className="">
-    //   <WelcomePage />
-    // </main>
-    <section>
-          <NavBar />
-          <SideNav />
-          <IconBar/>
-          <div className="height">{children}</div>
-      </section>
+    <main className="">
+      <WelcomePage />
+    </main>
   );
 };
 export default Layout;
